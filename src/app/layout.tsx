@@ -24,7 +24,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "OneChat AI | Affiliate Program",
   description:
-    "Join the OneChat AI Affiliate Program and earn 20% recurring commissions by sharing the ultimate AI super app with your audience.",
+    "Join the OneChat AI Affiliate Program and earn 30% recurring commissions by sharing the ultimate AI super app with your audience.",
   alternates: {
     canonical: "https://onechatai.ai/affiliate",
   },

@@ -3,10 +3,66 @@ import React from "react";
 import AffiliateHeader from "./AffiliateHeader";
 import AffiliateFooter from "./AffiliateFooter";
 
+const faqData = [
+  {
+    question: "How much can I earn?",
+    answer: "You earn 30% recurring commission on every customer you refer, for 12 months. Because it's recurring, a single referral keeps paying you month after month — not just once. Depending on your traffic and audience, affiliates can earn anywhere from a few hundred to several thousand dollars per month."
+  },
+  {
+    question: "What's the commission structure?",
+    answer: "30% of every payment your referred customers make, for a full 12 months from their signup. If they upgrade, your commission grows with them."
+  },
+  {
+    question: "How long does the referral cookie last?",
+    answer: "60 days. If someone clicks your link and signs up any time within 60 days, the referral is credited to you."
+  },
+  {
+    question: "Who can become an affiliate?",
+    answer: "Anyone. Creators, newsletter writers, AI educators, bloggers, consultants — if you have an audience that uses AI tools, you can join. Signup is open and approval is instant."
+  },
+  {
+    question: "How and when do I get paid?",
+    answer: "We pay via PayPal or Wise. Once your balance reaches our $25 minimum payout threshold, your commission is sent. (A short holding period applies after each commission is earned to allow for refunds and cancellations.)"
+  },
+  {
+    question: "Do you provide marketing materials?",
+    answer: "Yes. You get a full asset kit so you can start promoting right away without asking us for anything — a demo video, brand logos, banners, screenshots, and ready-to-use messaging and copy."
+  },
+  {
+    question: "Can I track my performance?",
+    answer: "Yes. You get real-time access to your own dashboard to track clicks, traffic, conversions, and earnings as they happen."
+  },
+  {
+    question: "What is OneChat AI? (What am I promoting?)",
+    answer: "OneChat AI is the ultimate AI super app. It unifies ChatGPT, Claude, Gemini, DeepSeek, and all the major models, along with hundreds of tools for writing, marketing, content creation, image generation, video generation, and graphic design — all in one place. It's an easy, high-value product to recommend because it replaces multiple separate AI subscriptions with one."
+  },
+  {
+    question: "How do I get started?",
+    answer: "Sign up on this page, grab your unique referral link from your dashboard, and start sharing. You'll have everything you need in a couple of minutes."
+  },
+  {
+    question: "Who do I contact with questions?",
+    answer: (
+      <>
+        Email us any time at{" "}
+        <a
+          href="mailto:support@onechatai.ai"
+          className="text-violet-600 underline font-medium hover:text-violet-800 transition-colors"
+        >
+          support@onechatai.ai
+        </a>
+        .
+      </>
+    )
+  }
+];
+
 export default function AffiliateLanding() {
   const portalUrl =
     process.env.NEXT_PUBLIC_REWARDFUL_PORTAL_URL ||
     "https://onechat-ai.getrewardful.com/signup";
+
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-zinc-900 font-sans antialiased flex flex-col selection:bg-zinc-200 selection:text-zinc-900">
@@ -36,18 +92,16 @@ export default function AffiliateLanding() {
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 mb-5 leading-tight px-2 tracking-tight">
               Promote OneChat AI. <br className="sm:hidden" />
-              Earn 20% Commission.
+              Earn 30% Commission.
             </h1>
 
             {/* Description */}
             <p className="text-sm sm:text-base text-zinc-9000 mb-5 px-4 max-w-xl mx-auto leading-relaxed">
-              OneChat AI is the ultimate AI Super App bringing GPT-4o, Claude
-              3.5, Gemini 1.5, and more under one budget-friendly plan. Share it
-              and get paid every month.
+              OneChat AI is the ultimate AI super app. It unifies ChatGPT, Claude, Gemini, DeepSeek, and all the major models, along with hundreds of tools for writing, marketing, content creation, image generation, video generation, and graphic design — all in one place.
             </p>
 
             {/* Creator avatars */}
-            <div className="flex justify-center mb-6">
+            {/* <div className="flex justify-center mb-6">
               <div className="inline-flex items-center gap-2.5">
                 <div className="flex -space-x-1.5">
                   <span className="inline-flex size-5 items-center justify-center rounded-full text-[8px] font-semibold text-white ring-[1.5px] ring-zinc-950 bg-green-600">
@@ -75,7 +129,7 @@ export default function AffiliateLanding() {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -102,19 +156,13 @@ export default function AffiliateLanding() {
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
               </a>
-              <a
-                className="inline-flex items-center gap-2 h-11 px-8 text-sm font-medium rounded-full border border-zinc-200 text-zinc-9000 hover:text-zinc-900 hover:border-zinc-300 transition-colors duration-200 w-full sm:w-auto justify-center"
-                href="/affiliate/terms"
-              >
-                View Terms
-              </a>
             </div>
 
             {/* Stats Card */}
             <div className="mt-12 sm:mt-14 inline-flex divide-x divide-zinc-800 rounded-2xl border border-zinc-200 bg-white backdrop-blur-sm shadow-sm overflow-hidden">
               <div className="flex flex-col items-center px-7 py-4">
                 <span className="text-2xl sm:text-3xl font-bold text-zinc-900 tabular-nums tracking-tight">
-                  20%
+                  30%
                 </span>
                 <span className="mt-1 text-[10px] sm:text-xs text-zinc-9000">
                   Commission
@@ -122,7 +170,7 @@ export default function AffiliateLanding() {
               </div>
               <div className="flex flex-col items-center px-7 py-4">
                 <span className="text-2xl sm:text-3xl font-bold text-zinc-900 tabular-nums tracking-tight">
-                  6 mo
+                  12 months
                 </span>
                 <span className="mt-1 text-[10px] sm:text-xs text-zinc-9000">
                   Duration
@@ -130,7 +178,7 @@ export default function AffiliateLanding() {
               </div>
               <div className="flex flex-col items-center px-7 py-4">
                 <span className="text-2xl sm:text-3xl font-bold text-zinc-900 tabular-nums tracking-tight">
-                  60 d
+                  60 days
                 </span>
                 <span className="mt-1 text-[10px] sm:text-xs text-zinc-9000">
                   Cookie Window
@@ -179,7 +227,7 @@ export default function AffiliateLanding() {
                 01
               </p>
               <h3 className="text-sm sm:text-base font-semibold text-zinc-900 mb-2 leading-snug">
-                Apply &amp; Get Approved
+                Sign Up
               </h3>
               <p className="text-xs sm:text-sm text-zinc-9000 leading-relaxed max-w-[220px] mx-auto">
                 Sign up and start immediately. Instant approval — no review
@@ -245,7 +293,7 @@ export default function AffiliateLanding() {
                 Earn Commission
               </h3>
               <p className="text-xs sm:text-sm text-zinc-9000 leading-relaxed max-w-[220px] mx-auto">
-                20% on every payment your referrals make within 6 months. Paid
+                30% on every payment your referrals make within 12 months. Paid
                 monthly via PayPal.
               </p>
             </div>
@@ -254,11 +302,9 @@ export default function AffiliateLanding() {
 
         {/* Program Benefits Section */}
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-8 pb-32 sm:pb-48">
-          <p className="text-[10px] sm:text-xs md:text-sm text-zinc-9000 uppercase tracking-[0.2em] mb-2 font-medium">
-            Program benefits
-          </p>
+          
           <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-zinc-900 mb-3 leading-tight px-4">
-            Built for creators and marketers
+            Program benefits
           </h2>
           <p className="text-[11px] sm:text-sm text-zinc-9000 mb-10 sm:mb-14 px-6">
             Everything you need to earn consistently.
@@ -287,7 +333,7 @@ export default function AffiliateLanding() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-zinc-900 leading-snug mb-1.5">
-                  20% Recurring Commission
+                  30% Recurring Commission
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
                   Earn on every payment your referrals make — not just the first
@@ -325,10 +371,10 @@ export default function AffiliateLanding() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-zinc-900 leading-snug mb-1.5">
-                  6-Month Attribution
+                  12-Month Attribution
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
-                  Long earning window. Commission on all payments within 6
+                  Long earning window. Commission on all payments within 12
                   months of referral.
                 </p>
               </div>
@@ -451,7 +497,7 @@ export default function AffiliateLanding() {
                   Monthly Payouts
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
-                  Reliable monthly PayPal payouts with a simple $20 threshold.
+                  Reliable monthly PayPal payouts with a simple $25 threshold.
                 </p>
               </div>
             </div>
@@ -464,7 +510,7 @@ export default function AffiliateLanding() {
             What you&apos;ll promote
           </p>
           <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-zinc-900 mb-3 leading-tight px-4">
-            The ultimate AI super app for $14.99/mo
+            The Ultimate AI Super App
           </h2>
           <p className="text-[11px] sm:text-sm text-zinc-9000 mb-10 sm:mb-14 px-6">
             Access all top-tier models under one subscription. It sells itself.
@@ -487,8 +533,7 @@ export default function AffiliateLanding() {
                   All-in-One AI Access
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
-                  No need to purchase separate subscriptions. Users get GPT-4o,
-                  Claude 3.5 Sonnet, Gemini, and more.
+                 OneChat AI brings every major AI model, and 300+ tools into one place.
                 </p>
               </div>
             </div>
@@ -515,11 +560,10 @@ export default function AffiliateLanding() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-zinc-900 leading-snug mb-1.5">
-                  Saves $60+/mo for Users
+                  Save $250/mo+ on AI Tools
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
-                  Instead of paying separate subscriptions to OpenAI, Anthropic,
-                  and Google, users get them all for $14.99/mo.
+                  Instead of spending hundreds of dollars on many AI apps and tools, you can get everything in one place for less than $15.
                 </p>
               </div>
             </div>
@@ -586,10 +630,87 @@ export default function AffiliateLanding() {
             </div>
           </div>
         </div>
+ 
+        {/* FAQ Section */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 pb-32 sm:pb-48">
+          <div className="text-center mb-12">
+            <p className="text-[10px] sm:text-xs md:text-sm text-zinc-500 uppercase tracking-[0.2em] mb-2 font-semibold">
+              FAQs
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="border-t border-zinc-200 divide-y divide-zinc-200">
+            {faqData.map((item, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div key={index} className="py-5 sm:py-6">
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="flex w-full items-center justify-between text-left focus:outline-none group cursor-pointer"
+                  >
+                    <span className="text-sm sm:text-base md:text-lg font-bold text-zinc-900 group-hover:text-zinc-600 transition-colors duration-200 cursor-pointer">
+                      {item.question}
+                    </span>
+                    <span className={`ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#f0effd] text-[#6366f1] group-hover:bg-[#e4e2fd] transition-all duration-200 cursor-pointer`}>
+                      {isOpen ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-4 h-4 cursor-pointer"
+                        >
+                          <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-4 h-4 cursor-pointer"
+                        >
+                          <line x1="12" x2="12" y1="5" y2="19"></line>
+                          <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg>
+                      )}
+                    </span>
+                  </button>
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100 mt-3"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="text-xs sm:text-sm md:text-base text-zinc-600 leading-relaxed max-w-[90%]">
+                        {item.answer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Footer CTA Box */}
         {/* Start Earning Bottom Banner */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-8">
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-8">
           <div className="rounded-2xl bg-[#18181b] text-white px-4 py-6 sm:px-12 sm:py-12 shadow-xl">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
               <div className="flex flex-col gap-3 md:max-w-[260px] lg:max-w-sm">
@@ -664,19 +785,11 @@ export default function AffiliateLanding() {
                       support@onechatai.ai
                     </a>
                   </p>
-                  <p className="text-xs text-zinc-9000">
-                    <a
-                      className="text-white underline font-medium hover:text-zinc-300"
-                      href="/affiliate/terms"
-                    >
-                      View full program terms
-                    </a>
-                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
 
       <AffiliateFooter />

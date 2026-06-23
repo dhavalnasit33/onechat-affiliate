@@ -22,9 +22,9 @@ export default function AffiliateHeader() {
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               className="hidden sm:inline text-xs md:text-sm text-zinc-500 underline underline-offset-4 hover:text-zinc-900 transition-colors duration-200"
-              href="https://onechatai.ai/chat"
+              href="https://onechatai.ai"
             >
-              Looking for Private Chat?
+              Back to Homepage
             </a>
           </div>
         </div>
