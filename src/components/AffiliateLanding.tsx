@@ -6,39 +6,48 @@ import AffiliateFooter from "./AffiliateFooter";
 const faqData = [
   {
     question: "How much can I earn?",
-    answer: "You earn 30% recurring commission on every customer you refer, for 12 months. Because it's recurring, a single referral keeps paying you month after month — not just once. Depending on your traffic and audience, affiliates can earn anywhere from a few hundred to several thousand dollars per month."
+    answer:
+      "You earn 30% recurring commission on every customer you refer, for 12 months. Because it's recurring, a single referral keeps paying you month after month — not just once. Depending on your traffic and audience, affiliates can earn anywhere from a few hundred to several thousand dollars per month.",
   },
   {
     question: "What's the commission structure?",
-    answer: "30% of every payment your referred customers make, for a full 12 months from their signup. If they upgrade, your commission grows with them."
+    answer:
+      "30% of every payment your referred customers make, for a full 12 months from their signup. If they upgrade, your commission grows with them.",
   },
   {
     question: "How long does the referral cookie last?",
-    answer: "60 days. If someone clicks your link and signs up any time within 60 days, the referral is credited to you."
+    answer:
+      "60 days. If someone clicks your link and signs up any time within 60 days, the referral is credited to you.",
   },
   {
     question: "Who can become an affiliate?",
-    answer: "Anyone. Creators, newsletter writers, AI educators, bloggers, consultants — if you have an audience that uses AI tools, you can join. Signup is open and approval is instant."
+    answer:
+      "Anyone. Creators, newsletter writers, AI educators, bloggers, consultants — if you have an audience that uses AI tools, you can join. Signup is open and approval is instant.",
   },
   {
     question: "How and when do I get paid?",
-    answer: "We pay via PayPal or Wise. Once your balance reaches our $25 minimum payout threshold, your commission is sent. (A short holding period applies after each commission is earned to allow for refunds and cancellations.)"
+    answer:
+      "We pay via PayPal or Wise. Once your balance reaches our $25 minimum payout threshold, your commission is sent. (A short holding period applies after each commission is earned to allow for refunds and cancellations.)",
   },
   {
     question: "Do you provide marketing materials?",
-    answer: "Yes. You get a full asset kit so you can start promoting right away without asking us for anything — a demo video, brand logos, banners, screenshots, and ready-to-use messaging and copy."
+    answer:
+      "Yes. You get a full asset kit so you can start promoting right away without asking us for anything — a demo video, brand logos, banners, screenshots, and ready-to-use messaging and copy.",
   },
   {
     question: "Can I track my performance?",
-    answer: "Yes. You get real-time access to your own dashboard to track clicks, traffic, conversions, and earnings as they happen."
+    answer:
+      "Yes. You get real-time access to your own dashboard to track clicks, traffic, conversions, and earnings as they happen.",
   },
   {
     question: "What is OneChat AI? (What am I promoting?)",
-    answer: "OneChat AI is the ultimate AI super app. It unifies ChatGPT, Claude, Gemini, DeepSeek, and all the major models, along with hundreds of tools for writing, marketing, content creation, image generation, video generation, and graphic design — all in one place. It's an easy, high-value product to recommend because it replaces multiple separate AI subscriptions with one."
+    answer:
+      "OneChat AI is the ultimate AI super app. It unifies ChatGPT, Claude, Gemini, DeepSeek, and all the major models, along with hundreds of tools for writing, marketing, content creation, image generation, video generation, and graphic design — all in one place. It's an easy, high-value product to recommend because it replaces multiple separate AI subscriptions with one.",
   },
   {
     question: "How do I get started?",
-    answer: "Sign up on this page, grab your unique referral link from your dashboard, and start sharing. You'll have everything you need in a couple of minutes."
+    answer:
+      "Sign up on this page, grab your unique referral link from your dashboard, and start sharing. You'll have everything you need in a couple of minutes.",
   },
   {
     question: "Who do I contact with questions?",
@@ -53,8 +62,8 @@ const faqData = [
         </a>
         .
       </>
-    )
-  }
+    ),
+  },
 ];
 
 export default function AffiliateLanding() {
@@ -74,7 +83,7 @@ export default function AffiliateLanding() {
         <div className="flex flex-col items-center justify-center px-4 sm:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
           <div className="max-w-2xl w-full text-center mx-auto">
             {/* Top Badge */}
-            <div className="flex justify-center mb-6">
+            {/* <div className="flex justify-center mb-6">
               <a
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-200 bg-white hover:bg-white border border-zinc-200 shadow-sm transition-colors duration-200"
                 href="https://onechatai.ai"
@@ -87,7 +96,7 @@ export default function AffiliateLanding() {
                   Affiliate Program
                 </span>
               </a>
-            </div>
+            </div> */}
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 mb-5 leading-tight px-2 tracking-tight">
@@ -97,7 +106,11 @@ export default function AffiliateLanding() {
 
             {/* Description */}
             <p className="text-sm sm:text-base text-zinc-9000 mb-5 px-4 max-w-xl mx-auto leading-relaxed">
-              OneChat AI is the ultimate AI super app. It unifies ChatGPT, Claude, Gemini, DeepSeek, and all the major models, along with hundreds of tools for writing, marketing, content creation, image generation, video generation, and graphic design — all in one place.
+              OneChat AI is the ultimate AI super app. It unifies ChatGPT,
+              Claude, Gemini, DeepSeek, and all the major models, along with
+              hundreds of tools for writing, marketing, content creation, image
+              generation, video generation, and graphic design — all in one
+              place.
             </p>
 
             {/* Creator avatars */}
@@ -137,9 +150,17 @@ export default function AffiliateLanding() {
                 href={portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-11 px-8 text-sm font-semibold rounded-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 transition-colors duration-200 w-full sm:w-auto justify-center shadow-sm"
+                className="inline-flex items-center justify-center gap-3
+      h-16 px-16
+      text-lg font-semibold
+      rounded-full
+      bg-[#6C56E5] text-white
+      hover:bg-[#5B46D4]
+      transition-all duration-200
+      shadow-lg hover:shadow-xl
+      w-full sm:w-auto"
               >
-                Join as Affiliate
+                Join Affiliate
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -150,10 +171,10 @@ export default function AffiliateLanding() {
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-arrow-right size-4"
+                  className="size-5"
                 >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
                 </svg>
               </a>
             </div>
@@ -298,11 +319,36 @@ export default function AffiliateLanding() {
               </p>
             </div>
           </div>
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={portalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 h-16 px-16 text-lg font-semibold rounded-full bg-[#6C56E5] text-white hover:bg-[#5B46D4] transition-all duration-200 shadow-lg hover:shadow-xl w-full sm:w-auto"
+            >
+              Join Affiliate
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-5"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          {/* END ADDED CTA 1 */}
         </div>
 
         {/* Program Benefits Section */}
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-8 pb-32 sm:pb-48">
-          
           <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-zinc-900 mb-3 leading-tight px-4">
             Program benefits
           </h2>
@@ -502,6 +548,33 @@ export default function AffiliateLanding() {
               </div>
             </div>
           </div>
+          {/* ADDED CTA 2 */}
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={portalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 h-16 px-16 text-lg font-semibold rounded-full bg-[#6C56E5] text-white hover:bg-[#5B46D4] transition-all duration-200 shadow-lg hover:shadow-xl w-full sm:w-auto"
+            >
+              Join Affiliate
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-5"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          {/* END ADDED CTA 2 */}
         </div>
 
         {/* Product Promo Section (What you'll promote) */}
@@ -533,7 +606,8 @@ export default function AffiliateLanding() {
                   All-in-One AI Access
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
-                 OneChat AI brings every major AI model, and 300+ tools into one place.
+                  OneChat AI brings every major AI model, and 300+ tools into
+                  one place.
                 </p>
               </div>
             </div>
@@ -563,7 +637,8 @@ export default function AffiliateLanding() {
                   Save $250/mo+ on AI Tools
                 </p>
                 <p className="text-xs text-zinc-9000 leading-relaxed">
-                  Instead of spending hundreds of dollars on many AI apps and tools, you can get everything in one place for less than $15.
+                  Instead of spending hundreds of dollars on many AI apps and
+                  tools, you can get everything in one place for less than $15.
                 </p>
               </div>
             </div>
@@ -630,7 +705,7 @@ export default function AffiliateLanding() {
             </div>
           </div>
         </div>
- 
+
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto px-4 sm:px-8 pb-32 sm:pb-48">
           <div className="text-center mb-12">
@@ -654,7 +729,9 @@ export default function AffiliateLanding() {
                     <span className="text-sm sm:text-base md:text-lg font-bold text-zinc-900 group-hover:text-zinc-600 transition-colors duration-200 cursor-pointer">
                       {item.question}
                     </span>
-                    <span className={`ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#f0effd] text-[#6366f1] group-hover:bg-[#e4e2fd] transition-all duration-200 cursor-pointer`}>
+                    <span
+                      className={`ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#f0effd] text-[#6366f1] group-hover:bg-[#e4e2fd] transition-all duration-200 cursor-pointer`}
+                    >
                       {isOpen ? (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

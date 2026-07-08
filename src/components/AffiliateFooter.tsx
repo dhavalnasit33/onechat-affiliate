@@ -25,7 +25,7 @@ export default function AffiliateFooter() {
             </p>
           </div>
 
-          <div className="flex flex-row gap-8 sm:gap-12 lg:gap-16 flex-shrink-0">
+          {/* <div className="flex flex-row gap-8 sm:gap-12 lg:gap-16 flex-shrink-0">
             <div className="flex flex-col gap-4 min-w-[100px]">
               <h4 className="text-[11px] font-semibold text-zinc-9000 uppercase tracking-widest">
                 Learn
@@ -88,7 +88,7 @@ export default function AffiliateFooter() {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-10 pt-4 border-t border-[#e3dccd] flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
